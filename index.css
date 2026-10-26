@@ -11,7 +11,7 @@ body { /* We can style any HTML element by using its name - here we're styling t
   color: #1e293b;  /* CHANGED: dark slate instead of #333 */
   line-height: 1.6;
   /* we want a white page, that's centered and not too wide */
-  background-color: #F4C430;  /* CHANGED: yellow instead of white */
+  background-color: #FBE7A1;  /* softer yellow */
   margin:0 auto;
   max-width: 900px;  /* CHANGED: was 800px */
   padding: 60px 20px 40px;  /* CHANGED: adds side padding for small screens */
@@ -86,7 +86,18 @@ header h1 {
 
 header p {
   margin: 0;
-  color: #64748b;
+  color: #0f2a5c;  /* CHANGED: navy instead of grey, so it's readable on yellow */
+}
+
+/* NEW: header links in navy with an underline so they stand out on yellow */
+header a {
+  color: #0f2a5c;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+header a:hover {
+  color: #1d4ed8;
 }
 
 section h2 {
