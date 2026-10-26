@@ -8,10 +8,10 @@ body { /* We can style any HTML element by using its name - here we're styling t
   /* We want text that uses a clean sans-serif font, is usually 16px big and close to black */
   font-family: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;  /* CHANGED: DM Sans first */
   font-size: 16px;
-  color: #2d2a3a;  /* CHANGED: soft dark grey-purple */
+  color: #000;
   line-height: 1.6;
   /* we want a white page, that's centered and not too wide */
-  background-color: #ece6f8;  /* CHANGED: soft lavender instead of white */
+  background-color: #fff;
   margin:0 auto;
   max-width: 900px;  /* CHANGED: was 800px */
   padding: 60px 20px 40px;  /* CHANGED: adds side padding for small screens */
@@ -21,7 +21,7 @@ body { /* We can style any HTML element by using its name - here we're styling t
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  color: #2a1f47;  /* CHANGED: deep purple-black instead of #333 */
+  color: #000;  /* CHANGED: black instead of #333 */
   margin-top: 24px;
   margin-bottom: 16px;
   font-weight: 600;
@@ -47,18 +47,19 @@ p {
 }
 
 section {
-  margin-bottom: 2.5em;  /* We want a little more space between sections */
+  margin-bottom: 1.2em;  /* CHANGED: tighter gap between sections (was 2.5em) */
   background: #fff;  /* NEW: white card */
+  border: 1px solid #eee;  /* NEW: thin outline so the card shows on a white page */
   border-radius: 12px;  /* NEW */
-  padding: 36px 44px;  /* NEW */
-  box-shadow: 0 2px 10px rgba(91, 63, 160, 0.10);  /* NEW */
-  border-top: 4px solid #b9a3e3;  /* NEW: lavender band on each card */
+  padding: 18px 28px;  /* CHANGED: smaller card, so the closed tab is slimmer */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);  /* NEW */
+  border-top: 4px solid #c2410c;  /* NEW: orange band on each card */
 }
 
 /* Links */
 /* We want the links to be a little more visible  and a different color */
 a {
-  color: #5b3fa0;  /* CHANGED: deep purple, readable on white and lavender */
+  color: #c2410c;  /* CHANGED: deep orange, readable on white */
   text-decoration: none;
 }
 
@@ -86,18 +87,18 @@ header h1 {
 
 header p {
   margin: 0;
-  color: #2d2a3a;
+  color: #000;
 }
 
-/* NEW: header links underlined so they stand out on lavender */
+/* NEW: header links underlined so they stand out */
 header a {
-  color: #5b3fa0;
+  color: #c2410c;
   text-decoration: underline;
   font-weight: 600;
 }
 
 header a:hover {
-  color: #2a1f47;
+  color: #9a3412;
 }
 
 section h2 {
@@ -116,9 +117,41 @@ figure {
   overflow-x: auto;
 }
 
+/* NEW: clickable section headings with a + / − sign */
+summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary h2 {
+  margin: 0;
+  font-size: 1.3em;  /* NEW: smaller heading on the tab */
+}
+
+summary::after {
+  content: "+";
+  font-size: 1.4em;
+  color: #c2410c;
+}
+
+details[open] > summary::after {
+  content: "−";
+}
+
+details[open] > summary {
+  margin-bottom: 12px;
+}
+
 @media (max-width: 600px) {
   section {
-    padding: 24px 20px;
+    padding: 16px 18px;
   }
 
   .big {
