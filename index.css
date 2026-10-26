@@ -115,7 +115,11 @@ figure {
   margin: 16px 0 0;
   max-width: 100%;
   overflow-x: auto;
-  text-align: center;  /* NEW: centres the chart inside its card */
+  display: flex;  /* NEW: lets us centre whatever is inside the figure */
+}
+
+figure > * {
+  margin: 0 auto;  /* NEW: centres the chart box inside its card */
 }
 
 /* NEW: clickable section headings with a + / − sign */
