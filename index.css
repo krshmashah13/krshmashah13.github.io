@@ -115,6 +115,7 @@ figure {
   margin: 16px 0 0;
   max-width: 100%;
   overflow-x: auto;
+  text-align: center;  /* NEW: centres the chart inside its card */
 }
 
 /* NEW: clickable section headings with a + / − sign */
