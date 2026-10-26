@@ -1,35 +1,60 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
- 
-  "title": {"text": "GDP Per Capita"},
- 
+
+  "title": {
+    "text": "GDP per capita, six countries",
+    "subtitle": "Current international USD, PPP. Source: World Bank",
+    "anchor": "start",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#555555"
+  },
+
   "width": "container",
-  "height": 300,
-   
+  "height": 280,
+  "autosize": {"type": "fit", "contains": "padding"},
+
+  "config": {
+    "font": "DM Sans",
+    "view": {"stroke": null}
+  },
+
   "data": {
     "values": [
-      {"Country": "China","GDP per capita": 21482},
-      {"Country": "DR Congo.","GDP per capita": 1337},
-      {"Country": "UK","GDP per capita": 54929},
-      {"Country": "India","GDP per capita": 8400},
-      {"Country": "Nigeria","GDP per capita": 5862},
-      {"Country": "USA","GDP per capita": 76329}
+      {"Country": "China", "GDP per capita": 21482},
+      {"Country": "DR Congo", "GDP per capita": 1337},
+      {"Country": "UK", "GDP per capita": 54929},
+      {"Country": "India", "GDP per capita": 8400},
+      {"Country": "Nigeria", "GDP per capita": 5862},
+      {"Country": "USA", "GDP per capita": 76329}
     ]
   },
- 
-  "mark": {
-    "type": "bar",
-    "color": "red"
-  },
- 
+
   "encoding": {
-    "x": {
-      "field": "Country"
-    },  
- 
     "y": {
+      "field": "Country",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null,
+      "axis": {"labelFontSize": 14, "ticks": false, "domain": false}
+    },
+    "x": {
       "field": "GDP per capita",
-      "type": "quantitative"}
+      "type": "quantitative",
+      "axis": null,
+      "scale": {"domain": [0, 90000]}
     }
+  },
+
+  "layer": [
+    {
+      "mark": {"type": "bar", "color": "#c2410c", "cornerRadiusEnd": 3}
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 6, "fontSize": 13, "color": "#000000"},
+      "encoding": {
+        "text": {"field": "GDP per capita", "type": "quantitative", "format": "$,.0f"}
+      }
+    }
+  ]
 }
- 
