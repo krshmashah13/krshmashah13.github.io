@@ -31,10 +31,11 @@
       "axis": {"labelAngle": 0}
     },  
  
-    "y": {
-      "field": "GDP per capita",
-      "type": "quantitative",
-      "title": "GDP per capita (current international USD, PPP)"
-    }
+   "y": {
+  "field": "GDP per capita",
+  "type": "quantitative",
+  "title": "GDP per capita (current international USD, PPP)",
+  "axis": {"titlePadding": 20}
+}
   }
 }
