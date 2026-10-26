@@ -8,19 +8,20 @@ body { /* We can style any HTML element by using its name - here we're styling t
   /* We want text that uses a clean sans-serif font, is usually 16px big and close to black */
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
-  color: #333;
+  color: #1e293b;  /* CHANGED: dark slate instead of #333 */
   line-height: 1.6;
   /* we want a white page, that's centered and not too wide */
-  background-color: #fff;
+  background-color: #e3ebf8;  /* CHANGED: soft blue instead of white */
   margin:0 auto;
-  max-width: 800px;
-  padding-top: 60px;
+  max-width: 900px;  /* CHANGED: was 800px */
+  padding: 60px 20px 40px;  /* CHANGED: adds side padding for small screens */
+  box-sizing: border-box;  /* NEW: keeps the 900px limit including padding */
 }
 
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  color: #333;
+  color: #0f2a5c;  /* CHANGED: navy instead of #333 */
   margin-top: 24px;
   margin-bottom: 16px;
   font-weight: 600;
@@ -47,12 +48,17 @@ p {
 
 section {
   margin-bottom: 2.5em;  /* We want a little more space between sections */
+  background: #fff;  /* NEW: white card */
+  border-radius: 12px;  /* NEW */
+  padding: 36px 44px;  /* NEW */
+  box-shadow: 0 2px 10px rgba(15, 42, 92, 0.08);  /* NEW */
+  border-top: 4px solid #1d4ed8;  /* NEW: blue band on each card */
 }
 
 /* Links */
 /* We want the links to be a little more visible  and a different color */
 a {
-  color: #065f46;
+  color: #1d4ed8;  /* CHANGED: blue instead of green (#065f46) */
   text-decoration: none;
 }
 
@@ -64,4 +70,53 @@ a:hover {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* ---- NEW rules for the card layout ---- */
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+header h1 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+header p {
+  margin: 0;
+  color: #64748b;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+section h3 {
+  font-size: 1.3em;
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.num {
+  color: #1d4ed8;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+figure {
+  margin: 16px 0 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 24px 20px;
+  }
+
+  .big {
+    font-size: 2em;
+  }
 }
