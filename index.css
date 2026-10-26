@@ -121,7 +121,7 @@ figure {
 figure.vega-embed {
   display: block;
   width: 100%;  /* CHANGED: fill the card so both charts are the same width */
-  margin: 16px 0 0;
+  margin: 18px 0 0;
 }
 
 /* NEW: clickable section headings with a + / − sign */
