@@ -120,8 +120,8 @@ figure {
 /* NEW: vega-embed turns each figure into a shrink-wrapped box, so centre that box */
 figure.vega-embed {
   display: block;
-  width: fit-content;
-  margin: 16px auto 0;
+  width: 100%;  /* CHANGED: fill the card so both charts are the same width */
+  margin: 16px 0 0;
 }
 
 /* NEW: clickable section headings with a + / − sign */
