@@ -21,6 +21,8 @@
 
 <head>    
     <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
     <!-- Try swapping to example3.css or another, and take a look at each example.css to see if you understand it-->
@@ -43,41 +45,41 @@
 
 <body> 
 <!-- The body tag contains the elements that visitors to our page will see. -->
-    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        Karishma Kinjal Shah
-    </h1>        
-    <p style="margin-top: 0px; color: darkblue">
-        <!-- Keep the header and author name close together -->
-        MPP-MPA Dual Degree |
-<a href="https:www.linkedin.com/in/karishma-k-shah/">LinkedIn</a> |
-       <a href="https://github.com/krshmashah13">GitHub</a>
-    </p>
+    <header>
+        <h1 class="big"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
+            <!-- This is a header, it is the largest text on the page -->
+            Karishma Kinjal Shah
+        </h1>        
+        <p>
+            <!-- Keep the header and author name close together -->
+            MPP-MPA Dual Degree |
+            <a href="https://www.linkedin.com/in/karishma-k-shah/">LinkedIn</a> |
+            <a href="https://github.com/krshmashah13">GitHub</a>
+        </p>
+    </header>
     <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This is compliation of ten class challenges for Automated Data Visualisation for Policymaking (PP434).  
+        This is a compilation of ten class challenges for Automated Data Visualisation for Policymaking (PP434).  
     </h3>
 
     <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
     <section>
+        <div class="num">01</div>
         <div class="chart-description">
-            <h2>Section 1: A basic chart</h2>
+            <h2>Basic charts</h2>
+
+            <h3>Chart 1: GDP per capita across six countries</h3>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
-                As a first example, we're using a basic chart from our repo.
+                Compares GDP per capita for China, DR Congo, India, Nigeria, the UK and the USA.
             </p>
         </div>
 
         <!-- This element will contain our vega-lite chart -->
         <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
-    </section>
-
-<section>
         <div class="chart-description">
-            <h2>Section 1: A basic chart</h2>
+            <h3>Chart 2: Real GDP per capita since 1990</h3>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
-                As a first example, we're using a basic chart from our repo.
+                Shows how real GDP per capita (current international USD, PPP) has changed over time for the same six countries.
             </p>
         </div>
 
@@ -110,10 +112,6 @@
         // e.g. 
         // let figure_2_spec = ...
         // vegaEmbed('#Location2', figure_2_spec)
-
-    </script>
-
-
 
     </script>
 
