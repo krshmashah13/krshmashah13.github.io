@@ -6,12 +6,12 @@
 
 body { /* We can style any HTML element by using its name - here we're styling the body */
   /* We want text that uses a clean sans-serif font, is usually 16px big and close to black */
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;  /* CHANGED: DM Sans first */
   font-size: 16px;
-  color: #1e293b;  /* CHANGED: dark slate instead of #333 */
+  color: #2d2a3a;  /* CHANGED: soft dark grey-purple */
   line-height: 1.6;
   /* we want a white page, that's centered and not too wide */
-  background-color: #FBE7A1;  /* softer yellow */
+  background-color: #ece6f8;  /* CHANGED: soft lavender instead of white */
   margin:0 auto;
   max-width: 900px;  /* CHANGED: was 800px */
   padding: 60px 20px 40px;  /* CHANGED: adds side padding for small screens */
@@ -21,7 +21,7 @@ body { /* We can style any HTML element by using its name - here we're styling t
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  color: #0f2a5c;  /* CHANGED: navy instead of #333 */
+  color: #2a1f47;  /* CHANGED: deep purple-black instead of #333 */
   margin-top: 24px;
   margin-bottom: 16px;
   font-weight: 600;
@@ -51,14 +51,14 @@ section {
   background: #fff;  /* NEW: white card */
   border-radius: 12px;  /* NEW */
   padding: 36px 44px;  /* NEW */
-  box-shadow: 0 2px 10px rgba(15, 42, 92, 0.08);  /* NEW */
-  border-top: 4px solid #1d4ed8;  /* NEW: blue band on each card */
+  box-shadow: 0 2px 10px rgba(91, 63, 160, 0.10);  /* NEW */
+  border-top: 4px solid #b9a3e3;  /* NEW: lavender band on each card */
 }
 
 /* Links */
 /* We want the links to be a little more visible  and a different color */
 a {
-  color: #1d4ed8;  /* CHANGED: blue instead of green (#065f46) */
+  color: #5b3fa0;  /* CHANGED: deep purple, readable on white and lavender */
   text-decoration: none;
 }
 
@@ -86,18 +86,18 @@ header h1 {
 
 header p {
   margin: 0;
-  color: #0f2a5c;  /* CHANGED: navy instead of grey, so it's readable on yellow */
+  color: #2d2a3a;
 }
 
-/* NEW: header links in navy with an underline so they stand out on yellow */
+/* NEW: header links underlined so they stand out on lavender */
 header a {
-  color: #0f2a5c;
+  color: #5b3fa0;
   text-decoration: underline;
   font-weight: 600;
 }
 
 header a:hover {
-  color: #1d4ed8;
+  color: #2a1f47;
 }
 
 section h2 {
@@ -107,12 +107,6 @@ section h2 {
 section h3 {
   font-size: 1.3em;
   margin-top: 32px;
-  margin-bottom: 8px;
-}
-
-.num {
-  color: #1d4ed8;
-  font-weight: 600;
   margin-bottom: 8px;
 }
 
