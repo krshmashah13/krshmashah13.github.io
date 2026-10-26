@@ -115,15 +115,18 @@ figure {
   margin: 16px 0 0;
   max-width: 100%;
   overflow-x: auto;
-  display: flex;  /* NEW: lets us centre whatever is inside the figure */
 }
 
-figure > * {
-  margin: 0 auto;  /* NEW: centres the chart box inside its card */
+/* NEW: vega-embed turns each figure into a shrink-wrapped box, so centre that box */
+figure.vega-embed {
+  display: block;
+  width: fit-content;
+  margin: 16px auto 0;
 }
 
 /* NEW: clickable section headings with a + / − sign */
-summary {
+/* (scoped to section > details so the charts' own ... menu isn't affected) */
+section > details > summary {
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -131,26 +134,26 @@ summary {
   justify-content: space-between;
 }
 
-summary::-webkit-details-marker {
+section > details > summary::-webkit-details-marker {
   display: none;
 }
 
-summary h2 {
+section > details > summary h2 {
   margin: 0;
   font-size: 1.3em;  /* NEW: smaller heading on the tab */
 }
 
-summary::after {
+section > details > summary::after {
   content: "+";
   font-size: 1.4em;
   color: #c2410c;
 }
 
-details[open] > summary::after {
+section > details[open] > summary::after {
   content: "−";
 }
 
-details[open] > summary {
+section > details[open] > summary {
   margin-bottom: 12px;
 }
 
