@@ -19,7 +19,7 @@
  
   "mark": {
     "type": "bar",
-    "color": "#c2410c"
+    "color": "#1d4ed8"
   },
  
   "encoding": {
@@ -31,11 +31,11 @@
       "axis": {"labelAngle": 0}
     },  
  
-   "y": {
-  "field": "GDP per capita",
-  "type": "quantitative",
-  "title": "GDP per capita (current international USD, PPP)",
-  "axis": {"titlePadding": 20}
-}
+    "y": {
+      "field": "GDP per capita",
+      "type": "quantitative",
+      "title": "GDP per capita (current international USD, PPP)",
+      "axis": {"titlePadding": 20}
+    }
   }
 }
