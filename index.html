@@ -146,7 +146,7 @@
 
     <section>
         <details open>
-            <summary><h2><span class="num">03.</span>Python, Altair and Project</h2></summary>
+            <summary><h2><span class="num">03.</span>Python, Altair and Policy debates</h2></summary>
 
             <!-- First tab: the class exercise with Python and Altair -->
             <details class="sub">
@@ -166,13 +166,13 @@
                 <figure id="Location6"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
             </details>
 
-            <!-- Second tab: my project -->
+            <!-- Second tab: policy debates -->
             <details class="sub">
-                <summary><h3><span class="num">03.2</span>My project: policy debates</h3></summary>
+                <summary><h3><span class="num">03.2</span>Policy debates</h3></summary>
 
                 <p class="lead">Spending vs outcomes: India's health budget in context</p>
                 <p>
-                    Does spending more on health per person buy longer lives? This project compares India with five other countries (China, Brazil, Indonesia, Pakistan and Bangladesh) using World Bank data from 2000 to 2023.
+                    Does spending more on health per person buy longer lives? This policy debate compares India with five other countries (China, Brazil, Indonesia, Pakistan and Bangladesh) using World Bank data from 2000 to 2023.
                 </p>
 
                 <div class="chart-description">
@@ -273,6 +273,34 @@
         </details>
     </section>
 
+    <section>
+        <details open>
+            <summary><h2><span class="num">05.</span>Accessing data</h2></summary>
+
+            <details class="sub">
+                <summary><h3><span class="num">05.1</span>The API chart</h3></summary>
+
+                <div class="chart-description">
+                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                        This chart is drawn from live World Bank data each time the page loads. India's life expectancy fell by almost three years in 2021, from 70.2 to 67.3, before recovering to 72.0 in 2023. Every other country dipped too, except China, whose life expectancy barely moved.
+                    </p>
+                    <p class="method">
+                        The data comes from the World Bank Data360 API. The base URL is https://data360api.worldbank.org/data360/data, and the request asks for the database <code>WB_WDI</code> (World Development Indicators), the indicator <code>WB_WDI_SP_DYN_LE00_IN</code> (life expectancy at birth), six countries (<code>IND, CHN, BRA, IDN, PAK, BGD</code>) and the years 2000 to 2023.
+                    </p>
+                    <p class="method" style="overflow-wrap: anywhere;">
+                        Full URL: <a href="https://data360api.worldbank.org/data360/data?DATABASE_ID=WB_WDI&amp;INDICATOR=WB_WDI_SP_DYN_LE00_IN&amp;REF_AREA=IND,CHN,BRA,IDN,PAK,BGD&amp;timePeriodFrom=2000&amp;timePeriodTo=2023" target="_blank" rel="noopener">https://data360api.worldbank.org/data360/data?DATABASE_ID=WB_WDI&amp;INDICATOR=WB_WDI_SP_DYN_LE00_IN&amp;REF_AREA=IND,CHN,BRA,IDN,PAK,BGD&amp;timePeriodFrom=2000&amp;timePeriodTo=2023</a>
+                    </p>
+                    <p class="method">
+                        How I made this: I opened the address in my browser to check the data first. It comes back as JSON in a tidy format, with one row per country per year (144 rows), but the values are stored as text, the countries as codes and the years as plain numbers. In the chart spec I turned the values into numbers, the codes into country names and the years into dates. The chart reads the API directly, so it updates if the World Bank revises its figures.
+                    </p>
+                </div>
+
+                <!-- This element will contain our vega-lite chart -->
+                <figure id="Location12"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+            </details>
+        </details>
+    </section>
+
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
         <!-- You'll need to change the id of the figure "<figure id="Location2"... -->
@@ -319,6 +347,9 @@
 
         let figure_11_spec = "owid_improved_chart.json";
         vegaEmbed('#Location11', figure_11_spec)
+
+        let figure_12_spec = "life_expectancy_api_chart.json";
+        vegaEmbed('#Location12', figure_12_spec)
         
         // Do you want to add more graphs?
         // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
