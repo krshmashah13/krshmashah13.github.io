@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "title": "Life Expectancy at Birth (live data)",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://data360api.worldbank.org/data360/data?DATABASE_ID=WB_WDI&INDICATOR=WB_WDI_SP_DYN_LE00_IN&REF_AREA=IND,CHN,BRA,IDN,PAK,BGD&timePeriodFrom=2000&timePeriodTo=2023",
+    "format": {
+      "type": "json",
+      "property": "value"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "{'IND': 'India', 'CHN': 'China', 'BRA': 'Brazil', 'IDN': 'Indonesia', 'PAK': 'Pakistan', 'BGD': 'Bangladesh'}[datum.REF_AREA]",
+      "as": "country"
+    },
+    {
+      "calculate": "toNumber(datum.OBS_VALUE)",
+      "as": "life_expectancy"
+    },
+    {
+      "calculate": "datetime(toNumber(datum.TIME_PERIOD), 0, 1)",
+      "as": "date"
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "color": {
+      "field": "country",
+      "type": "nominal",
+      "legend": {
+        "title": null
+      },
+      "scale": {
+        "domain": [
+          "India",
+          "China",
+          "Brazil",
+          "Indonesia",
+          "Pakistan",
+          "Bangladesh"
+        ],
+        "range": [
+          "#1d4ed8",
+          "#E69F00",
+          "#009E73",
+          "#CC79A7",
+          "#7B3294",
+          "#333333"
+        ]
+      }
+    },
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": "Source: World Bank, live from the Data360 API",
+      "axis": {
+        "titleAnchor": "start",
+        "titleFontSize": 11,
+        "titleFontWeight": "normal",
+        "titleColor": "#555555",
+        "titlePadding": 15
+      }
+    },
+    "y": {
+      "field": "life_expectancy",
+      "type": "quantitative",
+      "scale": {
+        "zero": false
+      },
+      "title": "Life expectancy (years)",
+      "axis": {
+        "titlePadding": 20
+      }
+    }
+  }
+}
