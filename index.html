@@ -146,7 +146,7 @@
 
     <section>
         <details open>
-            <summary><h2>03. Python and Altair</h2></summary>
+            <summary><h2>03. Python, Altair and my project</h2></summary>
 
             <div class="chart-description">
                 <h3>US price-to-earnings ratio</h3>
@@ -160,6 +160,19 @@
 
             <!-- This element will contain our vega-lite chart -->
             <figure id="Location6"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+
+            <div class="chart-description">
+                <h3>My project: Spending vs Outcomes: India's Health Budget in Context</h3>
+                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                    India's government health spending per person rose from about $3.8 in 2000 to $33.0 in 2023, but it is still a fraction of China's ($436) and Brazil's ($446). The chart uses a log scale, so each gridline is ten times the one below.
+                </p>
+                <p class="method">
+                    How I made this: I downloaded World Bank data on government health spending and life expectancy and cleaned it in Python in Google Colab. I picked six countries, reshaped the tables from wide to long and fixed the dates. I saved the clean data as a CSV in my GitHub repository, then built the chart with Altair and saved it as a Vega-Lite JSON file.
+                </p>
+            </div>
+
+            <!-- This element will contain our vega-lite chart -->
+            <figure id="Location7"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
         </details>
     </section>
 
@@ -194,6 +207,9 @@
 
         let figure_6_spec = "pe_ratio_chart.json";
         vegaEmbed('#Location6', figure_6_spec)
+
+        let figure_7_spec = "health_spending_chart.json";
+        vegaEmbed('#Location7', figure_7_spec)
         
         // Do you want to add more graphs?
         // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
