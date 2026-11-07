@@ -178,13 +178,17 @@ details.sub > summary::-webkit-details-marker {
 }
 
 details.sub > summary h3 {
-  margin: 12px 0;
-  font-size: 1.15em;
+  margin: 10px 0;
+  font-size: 1.25em;   /* CHANGED: a clear step up from the chart headings below */
+}
+
+details.sub[open] > summary {
+  margin-bottom: 4px;  /* NEW: closes the big gap between the tab title and the first chart */
 }
 
 details.sub > summary::after {
   content: "+";
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #1d4ed8;
 }
 
@@ -197,6 +201,15 @@ section h4 {
   font-size: 1.15em;
   margin-top: 28px;
   margin-bottom: 8px;
+}
+
+details.sub h4 {
+  font-size: 1.05em;   /* NEW: smaller than the sub-tab title, so the order is clear */
+  margin-top: 10px;
+}
+
+details.sub {
+  padding-bottom: 6px;
 }
 
 .lead {
