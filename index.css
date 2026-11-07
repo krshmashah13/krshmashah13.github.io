@@ -157,6 +157,18 @@ section > details[open] > summary {
   margin-bottom: 12px;
 }
 
+/* NEW: clearer numbering: the number is blue and sits in its own column, so the titles line up */
+.num {
+  color: #1d4ed8;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 2em;
+}
+
+details.sub > summary .num {
+  min-width: 2.7em;
+}
+
 /* NEW: smaller tabs nested inside a section tab (03.1 and 03.2), indented */
 details.sub {
   margin-top: 18px;
