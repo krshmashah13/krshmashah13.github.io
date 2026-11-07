@@ -169,6 +169,10 @@ details.sub > summary .num {
   min-width: 2.7em;
 }
 
+section h4 .num {
+  min-width: 3.4em;   /* NEW: room for the longer chart numbers, e.g. 03.2.1 */
+}
+
 /* NEW: smaller tabs nested inside a section tab (03.1 and 03.2), indented */
 details.sub {
   margin-top: 18px;
