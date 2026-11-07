@@ -157,16 +157,12 @@ section > details[open] > summary {
   margin-bottom: 12px;
 }
 
-/* NEW: small grey "how I made this" note under a chart description */
-.method {
-  font-size: 0.9em;
-  color: #555;
-}
-/* NEW: smaller tabs nested inside a section tab */
+/* NEW: smaller tabs nested inside a section tab (03.1 and 03.2), indented */
 details.sub {
   margin-top: 18px;
-  border-top: 1px solid #eee;
-  padding-top: 4px;
+  margin-left: 24px;               /* indent the sub-tab */
+  padding-left: 18px;
+  border-left: 3px solid #dbe3f3;  /* a soft guide line down the left side */
 }
 
 details.sub > summary {
@@ -196,6 +192,7 @@ details.sub[open] > summary::after {
   content: "−";
 }
 
+/* NEW: chart headings inside a tab, plus the small notes under each chart */
 section h4 {
   font-size: 1.15em;
   margin-top: 28px;
@@ -208,12 +205,12 @@ section h4 {
   margin-bottom: 4px;
 }
 
-.notes {
+.method {
   font-size: 0.9em;
   color: #555;
 }
 
-.method {
+.notes {
   font-size: 0.9em;
   color: #555;
 }
@@ -225,5 +222,10 @@ section h4 {
 
   .big {
     font-size: 2em;
+  }
+
+  details.sub {
+    margin-left: 6px;
+    padding-left: 10px;
   }
 }
