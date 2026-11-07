@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+
+  "title": {
+    "text": "India's Nuclear Power Output"
+  },
+
+  "width": 500,
+  "height": 300,
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/krshmashah13/krshmashah13.github.io/main/india_nuclear.csv",
+    "format": {"type": "csv"}
+  },
+
+  "mark": {
+    "type": "line",
+    "color": "#1d4ed8",
+    "strokeWidth": 2
+  },
+
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": "Source: IEA via ECO-API",
+      "axis": {
+        "titleAnchor": "start",
+        "titleFontSize": 11,
+        "titleFontWeight": "normal",
+        "titleColor": "#555555",
+        "titlePadding": 15
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Nuclear power output (GWh)",
+      "axis": {"titlePadding": 20}
+    }
+  }
+}
