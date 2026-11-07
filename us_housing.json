@@ -1,22 +1,32 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "title": {"text": "US Housing Starts"},
+  "title": {
+    "text": "US Housing Starts"
+  },
   "height": 300,
   "width": 500,
-  "autosize": {"type": "fit", "contains": "padding"},
   "background": "#ffffff",
-  "view": {"fill": "#ffffff", "strokeOpacity": 0},
+  "view": {
+    "fill": "#ffffff",
+    "strokeOpacity": 0
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/krshmashah13/krshmashah13.github.io/refs/heads/main/us_housing.csv",
-    "format": {"type": "csv"}
+    "format": {
+      "type": "csv"
+    }
   },
-  "mark": {"type": "line", "color": "#1d4ed8", "strokeWidth": 2},
+  "mark": {
+    "type": "line",
+    "color": "#1d4ed8",
+    "strokeWidth": 2
+  },
   "encoding": {
     "x": {
       "field": "observation_date",
       "type": "temporal",
       "axis": {
-        "title": "Source: U.S. Census Bureau; U.S. Department of Housing and Urban Development via FRED",
+        "title": "Source: U.S. Census Bureau and HUD via FRED",
         "titleAnchor": "start",
         "titleFontSize": 11,
         "titleFontWeight": "normal",
@@ -28,11 +38,10 @@
       "field": "HOUST",
       "type": "quantitative",
       "axis": {
-        "title": "Housing starts (thousands of units, annual rate)",
+        "title": "Housing starts (thousands)",
         "titleColor": "#122B39",
         "titlePadding": 20
       }
     }
-  },
-  "config": {}
+  }
 }
