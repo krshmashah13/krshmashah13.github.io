@@ -223,44 +223,53 @@
     </section>
 
     <section>
-        <details>
+        <details open>
             <summary><h2><span class="num">04.</span>Replication</h2></summary>
 
-            <div class="chart-description">
-                <h3><span class="num">04.1</span>The original chart</h3>
-                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    I replicated Our World in Data's chart <a href="https://ourworldindata.org/grapher/life-expectancy-vs-health-expenditure" target="_blank" rel="noopener">Life expectancy vs. health spending</a>. It plots life expectancy at birth against total health spending per person for countries with OECD spending data. This chart uses total spending in international dollars, while the charts in section 03 use government spending in US dollars, so the numbers are not the same.
-                </p>
-                <p class="method">
-                    Source: UN World Population Prospects (life expectancy) and the OECD Health Expenditure and Financing Database (spending), via Our World in Data.
-                </p>
-            </div>
+            <details class="sub">
+                <summary><h3><span class="num">04.1</span>The original chart</h3></summary>
 
-            <div class="chart-description">
-                <h3><span class="num">04.2</span>My replica</h3>
-                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    In 2023, life expectancy rises steeply with health spending up to a few thousand dollars per person and then flattens out. The United States, at $12,099 per person, sits far to the right of every other country with a life expectancy of about 79. The vertical axis starts at 64, not zero, so the differences between countries are easier to see.
-                </p>
-                <p class="method">
-                    How I made this: I downloaded the data behind the original chart from Our World in Data and cleaned it in Python in Google Colab. I renamed the columns, kept the rows with both numbers and fixed the dates. I saved it as a CSV in my GitHub repository and rebuilt the chart with Altair. The region colours are close to the original's but not exact.
-                </p>
-            </div>
+                <div class="chart-description">
+                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                        I replicated Our World in Data's chart <a href="https://ourworldindata.org/grapher/life-expectancy-vs-health-expenditure" target="_blank" rel="noopener">Life expectancy vs. health spending</a>. It plots life expectancy at birth against total health spending per person for countries with OECD spending data. This chart uses total spending in international dollars, while the charts in section 03 use government spending in US dollars, so the numbers are not the same.
+                    </p>
+                    <p class="method">
+                        Source: UN World Population Prospects (life expectancy) and the OECD Health Expenditure and Financing Database (spending), via Our World in Data.
+                    </p>
+                </div>
+            </details>
 
-            <!-- This element will contain our vega-lite chart -->
-            <figure id="Location10"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+            <details class="sub">
+                <summary><h3><span class="num">04.2</span>My replica</h3></summary>
 
-            <div class="chart-description">
-                <h3><span class="num">04.3</span>My improved version</h3>
-                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    India spends $312 per person on health, about a tenth of the typical country in this data (a median of $3,145), and only three of the 57 countries have a lower life expectancy: South Africa, Indonesia and Moldova. India is the lowest spender here, but the data covers mostly rich countries, so it is not necessarily the lowest anywhere.
-                </p>
-                <p class="method">
-                    How I made this: I used the same data as the replica, with India in blue and every other country in grey. A dashed line marks the median country, and spending is on a log scale, so each gridline is ten times the one before.
-                </p>
-            </div>
+                <div class="chart-description">
+                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                        In 2023, life expectancy rises steeply with health spending up to a few thousand dollars per person and then flattens out. The United States, at $12,099 per person, sits far to the right of every other country with a life expectancy of about 79. The vertical axis starts at 64, not zero, so the differences between countries are easier to see.
+                    </p>
+                    <p class="method">
+                        How I made this: I downloaded the data behind the original chart from Our World in Data and cleaned it in Python in Google Colab. I renamed the columns, kept the rows with both numbers and fixed the dates. I saved it as a CSV in my GitHub repository and rebuilt the chart with Altair. The region colours are close to the original's but not exact.
+                    </p>
+                </div>
 
-            <!-- This element will contain our vega-lite chart -->
-            <figure id="Location11"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+                <!-- This element will contain our vega-lite chart -->
+                <figure id="Location10"></figure>
+            </details>
+
+            <details class="sub">
+                <summary><h3><span class="num">04.3</span>My improved version</h3></summary>
+
+                <div class="chart-description">
+                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                        India spends $312 per person on health, about a tenth of the typical country in this data (a median of $3,145), and only three of the 57 countries have a lower life expectancy: South Africa, Indonesia and Moldova. India is the lowest spender here, but the data covers mostly rich countries, so it is not necessarily the lowest anywhere.
+                    </p>
+                    <p class="method">
+                        How I made this: I used the same data as the replica, with India in blue and every other country in grey. A dashed line marks the median country, and spending is on a log scale, so each gridline is ten times the one before.
+                    </p>
+                </div>
+
+                <!-- This element will contain our vega-lite chart -->
+                <figure id="Location11"></figure>
+            </details>
         </details>
     </section>
 
