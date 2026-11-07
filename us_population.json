@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {"text": "US Population"},
+  "height": 300,
+  "width": 500,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "background": "#ffffff",
+  "view": {"fill": "#ffffff", "strokeOpacity": 0},
+  "data": {
+    "url": "https://raw.githubusercontent.com/krshmashah13/krshmashah13.github.io/refs/heads/main/us_population.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": {"type": "line", "color": "#1d4ed8", "strokeWidth": 2},
+  "encoding": {
+    "x": {
+      "field": "observation_date",
+      "type": "temporal",
+      "axis": {
+        "title": "Source: U.S. Bureau of Economic Analysis via FRED",
+        "titleAnchor": "start",
+        "titleFontSize": 11,
+        "titleFontWeight": "normal",
+        "titleColor": "#555555",
+        "titlePadding": 15
+      }
+    },
+    "y": {
+      "field": "POPTHM",
+      "type": "quantitative",
+      "axis": {
+        "title": "Population (thousands)",
+        "titleColor": "#122B39",
+        "titlePadding": 20
+      }
+    }
+  },
+  "config": {}
+}
