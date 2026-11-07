@@ -222,6 +222,48 @@
         </details>
     </section>
 
+    <section>
+        <details>
+            <summary><h2><span class="num">04.</span>Replication</h2></summary>
+
+            <div class="chart-description">
+                <h3><span class="num">04.1</span>The original chart</h3>
+                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                    I replicated Our World in Data's chart <a href="https://ourworldindata.org/grapher/life-expectancy-vs-health-expenditure" target="_blank" rel="noopener">Life expectancy vs. health spending</a>. It plots life expectancy at birth against total health spending per person for countries with OECD spending data. This chart uses total spending in international dollars, while the charts in section 03 use government spending in US dollars, so the numbers are not the same.
+                </p>
+                <p class="method">
+                    Source: UN World Population Prospects (life expectancy) and the OECD Health Expenditure and Financing Database (spending), via Our World in Data.
+                </p>
+            </div>
+
+            <div class="chart-description">
+                <h3><span class="num">04.2</span>My replica</h3>
+                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                    In 2023, life expectancy rises steeply with health spending up to a few thousand dollars per person and then flattens out. The United States, at $12,099 per person, sits far to the right of every other country with a life expectancy of about 79.
+                </p>
+                <p class="method">
+                    How I made this: I downloaded the data behind the original chart from Our World in Data and cleaned it in Python in Google Colab. I renamed the columns, kept the rows with both numbers and fixed the dates. I saved it as a CSV in my GitHub repository and rebuilt the chart with Altair. The region colours are close to the original's but not exact.
+                </p>
+            </div>
+
+            <!-- This element will contain our vega-lite chart -->
+            <figure id="Location10"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+
+            <div class="chart-description">
+                <h3><span class="num">04.3</span>My improved version</h3>
+                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                    The United States spends about 39 times as much on health per person as India: $12,099 against $312 in 2023. India's bar is the smallest of the eight countries shown, just below Indonesia's $376.
+                </p>
+                <p class="method">
+                    How I made this: I used the same data as the replica and cut it down to eight countries. I sorted the bars, used grey for context and blue for India, labelled each bar with its value, and wrote a headline that states the finding.
+                </p>
+            </div>
+
+            <!-- This element will contain our vega-lite chart -->
+            <figure id="Location11"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </details>
+    </section>
+
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
         <!-- You'll need to change the id of the figure "<figure id="Location2"... -->
@@ -262,6 +304,12 @@
 
         let figure_9_spec = "spending_vs_life_chart.json";
         vegaEmbed('#Location9', figure_9_spec)
+
+        let figure_10_spec = "owid_replica_chart.json";
+        vegaEmbed('#Location10', figure_10_spec)
+
+        let figure_11_spec = "owid_improved_chart.json";
+        vegaEmbed('#Location11', figure_11_spec)
         
         // Do you want to add more graphs?
         // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
