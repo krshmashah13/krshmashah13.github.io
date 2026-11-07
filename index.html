@@ -109,11 +109,8 @@
 
             <!-- This element will contain our vega-lite chart -->
             <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-        </details>
 
-    </section>
-
-                <div class="chart-description">
+            <div class="chart-description">
                 <h3>US population</h3>
                 <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                     Shows the US population, including armed forces overseas, from 1959 to 2026, rising from about 176 million to about 343 million.
@@ -125,6 +122,8 @@
 
             <!-- This element will contain our vega-lite chart -->
             <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </details>
+    </section>
 
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
@@ -149,7 +148,7 @@
         let figure_3_spec = "india_nuclear.json"; // The chart spec for the India nuclear power chart (Building section)
         vegaEmbed('#Location3', figure_3_spec)
 
-                let figure_4_spec = "us_population.json";
+        let figure_4_spec = "us_population.json";
         vegaEmbed('#Location4', figure_4_spec)
         
         // Do you want to add more graphs?

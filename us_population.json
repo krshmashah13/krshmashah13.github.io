@@ -3,7 +3,6 @@
   "title": {"text": "US Population"},
   "height": 300,
   "width": 500,
-  "autosize": {"type": "fit", "contains": "padding"},
   "background": "#ffffff",
   "view": {"fill": "#ffffff", "strokeOpacity": 0},
   "data": {
