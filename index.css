@@ -38,7 +38,7 @@ h2 {
 
 .small {
   font-size: 1.25em;
-  text-align: center;
+  text-align: center;  /* NEW: centres the line under the name and links */
 }
 
 /* Paragraph */
@@ -164,6 +164,11 @@ section > details[open] > summary {
   font-weight: 600;
   display: inline-block;
   min-width: 2em;
+  margin-right: 0.35em;   /* NEW: a small gap, so the number never touches the title */
+}
+
+section h3 .num {
+  min-width: 3em;         /* NEW: room for numbers like 04.1 next to chart headings */
 }
 
 details.sub > summary .num {
