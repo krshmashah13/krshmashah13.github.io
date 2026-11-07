@@ -298,6 +298,25 @@
                 <!-- This element will contain our vega-lite chart -->
                 <figure id="Location12"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
             </details>
+
+            <details class="sub">
+                <summary><h3><span class="num">05.2</span>The scraped chart</h3></summary>
+
+                <div class="chart-description">
+                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                        Bangladesh and Pakistan spend less on health per person than India: $179 each against India's $273 in 2022. India is still not the lowest spender anywhere, because 46 of the 192 countries on the list spend less.
+                    </p>
+                    <p class="method">
+                        How I made this: Wikipedia's list of countries by total health expenditure per capita has no data download, so I scraped the page in Google Colab. I downloaded it with Python's requests package and pulled out the second table (WHO data for 192 countries) with pandas. I renamed the columns, kept only the numbers, because the table can include commas and footnote marks, and saved the result as a CSV in my GitHub repository. The chart reads that file and shows my six countries.
+                    </p>
+                    <p class="method">
+                        Note: these WHO figures for 2022 are not the same as the OECD figures in 04.3, which come from a different source and year, so India is $273 here and $312 there.
+                    </p>
+                </div>
+
+                <!-- This element will contain our vega-lite chart -->
+                <figure id="Location13"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+            </details>
         </details>
     </section>
 
@@ -350,6 +369,9 @@
 
         let figure_12_spec = "life_expectancy_api_chart.json";
         vegaEmbed('#Location12', figure_12_spec)
+
+        let figure_13_spec = "wiki_health_spending_chart.json";
+        vegaEmbed('#Location13', figure_13_spec)
         
         // Do you want to add more graphs?
         // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
