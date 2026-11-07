@@ -138,6 +138,25 @@
         </details>
     </section>
 
+    <section>
+        <details open>
+            <summary><h2>03. Python and Altair</h2></summary>
+
+            <div class="chart-description">
+                <h3>US price-to-earnings ratio</h3>
+                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                    The US price-to-earnings ratio stood at about 25 in June 2026, well above its long-run average of about 16. The spike to nearly 124 in 2009 reflects collapsing company earnings during the financial crisis, not rising share prices.
+                </p>
+                <p class="method">
+                    How I made this: I cleaned Robert Shiller's long-run stock market data in Python (Google Colab), calculated the P/E ratio, saved it as a CSV in my GitHub repository, then built the chart with Altair, which writes the Vega-Lite JSON.
+                </p>
+            </div>
+
+            <!-- This element will contain our vega-lite chart -->
+            <figure id="Location6"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </details>
+    </section>
+
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
         <!-- You'll need to change the id of the figure "<figure id="Location2"... -->
@@ -166,6 +185,9 @@
 
         let figure_5_spec = "us_housing.json";
         vegaEmbed('#Location5', figure_5_spec)
+
+        let figure_6_spec = "pe_ratio_chart.json";
+        vegaEmbed('#Location6', figure_6_spec)
         
         // Do you want to add more graphs?
         // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
