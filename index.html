@@ -188,6 +188,19 @@
                 <!-- This element will contain our vega-lite chart -->
                 <figure id="Location7"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
+                <div class="chart-description">
+                    <h4>Life expectancy at birth</h4>
+                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                        Bangladesh's life expectancy rose by about 13 years between 2000 and 2023, from 62.0 to 74.7. It passed India in 2003 and has stayed ahead since, even though Bangladesh spends far less government money per person ($7.7 against India's $33.0 in 2023). India gained about 9 years, from 62.7 to 72.0.
+                    </p>
+                    <p class="method">
+                        How I made this: the life expectancy data came from the same World Bank download as the spending data. I cleaned it in the same Google Colab notebook and saved it as a CSV in my GitHub repository. Then I built the chart with Altair, using the same colours as the spending chart, and saved it as a Vega-Lite JSON file.
+                    </p>
+                </div>
+
+                <!-- This element will contain our vega-lite chart -->
+                <figure id="Location8"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+
                 <div class="notes">
                     <p><strong>Notes:</strong> These figures cover government spending only. Private spending can be a large share of the total in some of these countries, so total health spending may look very different. Life expectancy depends on many things besides health spending, so these charts show association, not cause.</p>
                     <p><strong>Sources:</strong> Government spending: WHO Global Health Expenditure Database, via the World Bank (SH.XPD.GHED.PC.CD). Life expectancy at birth: World Development Indicators, World Bank (SP.DYN.LE00.IN).</p>
@@ -230,6 +243,9 @@
 
         let figure_7_spec = "health_spending_chart.json";
         vegaEmbed('#Location7', figure_7_spec)
+
+        let figure_8_spec = "life_expectancy_chart.json";
+        vegaEmbed('#Location8', figure_8_spec)
         
         // Do you want to add more graphs?
         // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
