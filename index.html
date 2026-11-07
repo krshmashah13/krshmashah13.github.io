@@ -239,7 +239,7 @@
             <div class="chart-description">
                 <h3><span class="num">04.2</span>My replica</h3>
                 <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    In 2023, life expectancy rises steeply with health spending up to a few thousand dollars per person and then flattens out. The United States, at $12,099 per person, sits far to the right of every other country with a life expectancy of about 79.
+                    In 2023, life expectancy rises steeply with health spending up to a few thousand dollars per person and then flattens out. The United States, at $12,099 per person, sits far to the right of every other country with a life expectancy of about 79. The vertical axis starts at 64, not zero, so the differences between countries are easier to see.
                 </p>
                 <p class="method">
                     How I made this: I downloaded the data behind the original chart from Our World in Data and cleaned it in Python in Google Colab. I renamed the columns, kept the rows with both numbers and fixed the dates. I saved it as a CSV in my GitHub repository and rebuilt the chart with Altair. The region colours are close to the original's but not exact.
@@ -252,10 +252,10 @@
             <div class="chart-description">
                 <h3><span class="num">04.3</span>My improved version</h3>
                 <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    The United States spends about 39 times as much on health per person as India: $12,099 against $312 in 2023. India's bar is the smallest of the eight countries shown, just below Indonesia's $376.
+                    India spends $312 per person on health, about a tenth of the typical country in this data (a median of $3,145), and only three of the 57 countries have a lower life expectancy: South Africa, Indonesia and Moldova. These 57 are mostly high-income OECD members, so poorer countries such as Bangladesh and Pakistan are missing. India is the lowest spender here, but not necessarily anywhere in the world.
                 </p>
                 <p class="method">
-                    How I made this: I used the same data as the replica and cut it down to eight countries. I sorted the bars, used grey for context and blue for India, labelled each bar with its value, and wrote a headline that states the finding.
+                    How I made this: I used the same data as the replica. Every country is a grey dot and India is blue, a dashed line marks the median country, and the three countries below India are labelled. Spending is on a log scale, so each gridline is ten times the one before. The subtitle says which countries are and aren't in the data.
                 </p>
             </div>
 
