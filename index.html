@@ -310,6 +310,9 @@
                         How I made this: Wikipedia's list of countries by total health expenditure per capita has no data download, so I scraped the page in Google Colab. I downloaded it with Python's requests package and pulled out the second table (WHO data for 192 countries) with pandas. I renamed the columns, kept only the numbers, because the table can include commas and footnote marks, and saved the result as a CSV in my GitHub repository. The chart reads that file and shows all 192 countries, with India and my five other countries highlighted.
                     </p>
                     <p class="method">
+                        Challenges: the page has three tables, so I had to find the right one by checking the column names. Wikipedia can refuse requests from programs that give no name, so I added one to mine. The table mixes years (169 countries are 2022, 21 are 2023 and two are 2021), so the comparison is not exactly like for like, although all six of my countries are 2022. Country names also follow Wikipedia's spelling, such as "Ivory Coast" and "DR Congo", which could cause trouble if I joined this table to another dataset.
+                    </p>
+                    <p class="method">
                         Note: these WHO figures for 2022 are not the same as the OECD figures in 04.3, which come from a different source and year, so India is $273 here and $312 there.
                     </p>
                 </div>
