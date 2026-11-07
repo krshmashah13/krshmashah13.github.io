@@ -307,7 +307,7 @@
                         Bangladesh and Pakistan spend less on health per person than India: $179 each against India's $273 in 2022. India is still not the lowest spender anywhere, because 46 of the 192 countries on the list spend less.
                     </p>
                     <p class="method">
-                        How I made this: Wikipedia's list of countries by total health expenditure per capita has no data download, so I scraped the page in Google Colab. I downloaded it with Python's requests package and pulled out the second table (WHO data for 192 countries) with pandas. I renamed the columns, kept only the numbers, because the table can include commas and footnote marks, and saved the result as a CSV in my GitHub repository. The chart reads that file and shows my six countries.
+                        How I made this: Wikipedia's list of countries by total health expenditure per capita has no data download, so I scraped the page in Google Colab. I downloaded it with Python's requests package and pulled out the second table (WHO data for 192 countries) with pandas. I renamed the columns, kept only the numbers, because the table can include commas and footnote marks, and saved the result as a CSV in my GitHub repository. The chart reads that file and shows all 192 countries, with India and my five other countries highlighted.
                     </p>
                     <p class="method">
                         Note: these WHO figures for 2022 are not the same as the OECD figures in 04.3, which come from a different source and year, so India is $273 here and $312 there.
