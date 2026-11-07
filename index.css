@@ -162,6 +162,61 @@ section > details[open] > summary {
   font-size: 0.9em;
   color: #555;
 }
+/* NEW: smaller tabs nested inside a section tab */
+details.sub {
+  margin-top: 18px;
+  border-top: 1px solid #eee;
+  padding-top: 4px;
+}
+
+details.sub > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+details.sub > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.sub > summary h3 {
+  margin: 12px 0;
+  font-size: 1.15em;
+}
+
+details.sub > summary::after {
+  content: "+";
+  font-size: 1.2em;
+  color: #1d4ed8;
+}
+
+details.sub[open] > summary::after {
+  content: "−";
+}
+
+section h4 {
+  font-size: 1.15em;
+  margin-top: 28px;
+  margin-bottom: 8px;
+}
+
+.lead {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 4px;
+}
+
+.notes {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.method {
+  font-size: 0.9em;
+  color: #555;
+}
 
 @media (max-width: 600px) {
   section {
