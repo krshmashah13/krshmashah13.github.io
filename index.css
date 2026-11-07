@@ -157,6 +157,12 @@ section > details[open] > summary {
   margin-bottom: 12px;
 }
 
+/* NEW: small grey "how I made this" note under a chart description */
+.method {
+  font-size: 0.9em;
+  color: #555;
+}
+
 @media (max-width: 600px) {
   section {
     padding: 16px 18px;
