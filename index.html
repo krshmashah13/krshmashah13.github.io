@@ -44,6 +44,17 @@
         #chartGrid {
             display: flex;
         }
+
+        /* the dashboard: a grid that fits as many small charts across as there is room for */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+            gap: 18px 6px;
+            margin-top: 16px;
+        }
+        .dashboard-grid > div {
+            justify-self: center;
+        }
         
     </style>
 </head>
@@ -327,7 +338,27 @@
         <details open>
             <summary><h2><span class="num">06.</span>Loops</h2></summary>
 
-            <p class="method">Work in progress: this section will hold my loops dashboard for India.</p>
+            <details class="sub" open>
+                <summary><h3><span class="num">06.1</span>India health dashboard</h3></summary>
+
+                <div class="chart-description">
+                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                        Six health and development indicators for India since 2000, one small chart for each. They use different units, so each chart has its own vertical scale, and its first and last values are labelled.
+                    </p>
+                    <p class="method">
+                        How I made this: I used two loops. In Python (Google Colab), a loop goes through six indicator codes, builds the World Bank API address for each one, downloads the data, cleans it (dropping missing values, turning the years into whole numbers and sorting them) and saves each series as its own JSON file in my GitHub repository. On this page, a JavaScript loop goes through the same six files, makes a box for each and draws a small chart in it, in a grid.
+                    </p>
+                    <p class="method">
+                        Challenges: the World Bank's older API address timed out (a 524 error), so I switched to its Data360 address, which answered straight away, and I added a time limit so a loop can never hang. The numbers arrive as text and had to be converted, and the six series have different units, so they could not share one scale.
+                    </p>
+                    <p class="method">
+                        Source: World Bank, World Development Indicators, through the Data360 API.
+                    </p>
+                </div>
+
+                <!-- The loop in the script at the bottom of the page puts one chart in this grid for each indicator -->
+                <div id="IndiaDashboard" class="dashboard-grid"></div>
+            </details>
         </details>
     </section>
 
@@ -383,6 +414,66 @@
 
         let figure_13_spec = "wiki_health_spending_chart.json";
         vegaEmbed('#Location13', figure_13_spec)
+
+        // ---- CC6 Loops: one small chart for each of six indicators, drawn by a loop ----
+        // Each chart reads its own JSON file (made by the Python loop in Colab).
+        // The indicators use different units, so every chart has its own vertical scale.
+        let india_base = "https://raw.githubusercontent.com/krshmashah13/krshmashah13.github.io/refs/heads/main/";
+        let india_indicators = [
+            {"file": "india_life_expectancy.json",  "title": "Life expectancy",        "unit": "years at birth",              "rising": true},
+            {"file": "india_infant_mortality.json", "title": "Infant mortality",       "unit": "deaths per 1,000 births",      "rising": false},
+            {"file": "india_fertility.json",        "title": "Fertility rate",         "unit": "births per woman",             "rising": false},
+            {"file": "india_gov_health_spend.json", "title": "Public health spending", "unit": "government, US$ per person", "rising": true},
+            {"file": "india_out_of_pocket.json",    "title": "Out-of-pocket spending", "unit": "% of health spending",         "rising": false},
+            {"file": "india_maternal_deaths.json",  "title": "Maternal deaths",        "unit": "per 100,000 births",           "rising": false}
+        ];
+
+        for (let i = 0; i < india_indicators.length; i++) {
+            let indicator = india_indicators[i];
+
+            // make an empty box for this indicator inside the dashboard
+            let panel = document.createElement("div");
+            panel.id = "india_panel_" + i;
+            document.getElementById("IndiaDashboard").appendChild(panel);
+
+            // the chart for this indicator: the line, with the first and last values labelled
+            let india_spec = {
+                "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                "title": {"text": indicator.title, "subtitle": indicator.unit, "anchor": "start", "fontSize": 13, "subtitleFontSize": 11, "subtitleColor": "#555555"},
+                "width": 165,
+                "height": 120,
+                "data": {"url": india_base + indicator.file},
+                "layer": [
+                    {
+                        "mark": {"type": "line", "color": "#1d4ed8", "strokeWidth": 2.5},
+                        "encoding": {
+                            "x": {"field": "date", "type": "quantitative", "scale": {"domain": [2000, 2029]}, "axis": {"title": null, "format": "d", "values": [2000, 2010, 2020]}},
+                            "y": {"field": "value", "type": "quantitative", "scale": {"zero": false, "padding": 14}, "axis": {"title": null, "tickCount": 4}}
+                        }
+                    },
+                    {
+                        "transform": [{"filter": "datum.date == 2000"}],
+                        "mark": {"type": "text", "align": "left", "dx": 4, "dy": (indicator.rising ? 11 : -8), "fontSize": 11, "color": "#1d4ed8"},
+                        "encoding": {
+                            "x": {"field": "date", "type": "quantitative"},
+                            "y": {"field": "value", "type": "quantitative"},
+                            "text": {"field": "value", "type": "quantitative", "format": ",.1f"}
+                        }
+                    },
+                    {
+                        "transform": [{"filter": "datum.date == 2023"}],
+                        "mark": {"type": "text", "align": "left", "dx": 5, "dy": 0, "fontSize": 12, "fontWeight": "bold", "color": "#1d4ed8"},
+                        "encoding": {
+                            "x": {"field": "date", "type": "quantitative"},
+                            "y": {"field": "value", "type": "quantitative"},
+                            "text": {"field": "value", "type": "quantitative", "format": ",.1f"}
+                        }
+                    }
+                ]
+            };
+
+            vegaEmbed("#india_panel_" + i, india_spec, {"actions": false});
+        }
         
         // Do you want to add more graphs?
         // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
