@@ -95,7 +95,7 @@
                     Compares GDP per capita for China, DR Congo, India, Nigeria, the UK and the USA.
                 </p>
                 <p class="method">
-                    How I made this: I started from the basic bar chart in the class repository and hosted it on my own GitHub site. I then edited the chart spec to change the colour, sort the bars, and clean up the axis labels and titles.
+                    How I made this: I edited the class bar chart: a new colour, sorted bars, and cleaner labels and titles.
                 </p>
             </div>
 
@@ -105,10 +105,10 @@
             <div class="chart-description">
                 <h3>Real GDP per capita since 1990</h3>
                 <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    Shows how real GDP per capita (current international USD, PPP) has changed over time for the same six countries.
+                    Real GDP per capita (current international USD, PPP) since 1990 for the same six countries.
                 </p>
                 <p class="method">
-                    How I made this: I started from the class line chart (World Bank data) and hosted it on my own GitHub site. I then edited the chart spec to tidy the axis title and move the source note to the bottom left.
+                    How I made this: I edited the class line chart: a tidier axis title and the source moved to the bottom left.
                 </p>
             </div>
 
@@ -124,10 +124,10 @@
             <div class="chart-description">
                 <h3>India's nuclear power output</h3>
                 <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    Shows India's nuclear power output in GWh from 1990 to 2022, rising from about 6,100 GWh to about 45,900 GWh.
+                    India's nuclear power output rose from about 6,100 GWh in 1990 to about 45,900 GWh in 2022.
                 </p>
                 <p class="method">
-                    How I made this: I found the series in the Economics Observatory Data Hub (data from the IEA) and opened its chart code in the Vega editor. I edited the title, axis labels, colour and size, kept the data as a CSV in my GitHub repository, pointed the chart at that file, and saved the spec as a JSON file.
+                    How I made this: I took the series from the Economics Observatory Data Hub (IEA data), edited the chart in the Vega editor and kept the data as a CSV in my repository.
                 </p>
             </div>
 
@@ -137,10 +137,10 @@
             <div class="chart-description">
                 <h3>US population</h3>
                 <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    Shows the US population, including armed forces overseas, from 1959 to 2026, rising from about 176 million to about 343 million.
+                    The US population, including armed forces overseas, rose from about 176 million in 1959 to about 343 million in 2026.
                 </p>
                 <p class="method">
-                    How I made this: I downloaded the series from FRED as a CSV and uploaded it to my GitHub repository. In the Vega editor I took a line chart spec I had already edited, changed its data link, field names and titles to read my file, and saved it as a JSON file.
+                    How I made this: I downloaded the FRED series as a CSV and pointed my edited line chart at it.
                 </p>
             </div>
 
@@ -150,10 +150,10 @@
             <div class="chart-description">
                 <h3>US housing starts</h3>
                 <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    Measured as a seasonally adjusted annual rate, US housing starts fell from roughly 2,300 thousand at the 2005 peak to under 600 thousand in 2009, and have since recovered to about 1,200 thousand.
+                    US housing starts (seasonally adjusted annual rate) fell from about 2,300 thousand at the 2005 peak to under 600 thousand in 2009, and have recovered to about 1,200 thousand.
                 </p>
                 <p class="method">
-                    How I made this: I downloaded the series from FRED as a CSV and uploaded it to my GitHub repository. In the Vega editor I reused my US population chart spec, changed its data link, field names and titles to read this file, and saved it as a JSON file.
+                    How I made this: I downloaded the FRED series as a CSV and reused my US population chart for it.
                 </p>
             </div>
 
@@ -173,10 +173,10 @@
                 <div class="chart-description">
                     <h4><span class="num">03.1.1</span>US price-to-earnings ratio</h4>
                     <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                        The US price-to-earnings ratio stood at about 25 in June 2026, well above its long-run average of about 16. The spike to nearly 124 in 2009 reflects collapsing company earnings during the financial crisis, not rising share prices.
+                        The US price-to-earnings ratio is about 25, well above its long-run average of about 16. The 2009 spike to nearly 124 came from collapsing earnings, not rising share prices.
                     </p>
                     <p class="method">
-                        How I made this: I worked through the class notebooks in Google Colab. I fetched and cleaned Robert Shiller's stock market data with Python, calculated the P/E ratio, and saved it as a CSV in my GitHub repository. Then I used the class Altair template to build the chart, changed its styling to match my site, and saved it as a Vega-Lite JSON file.
+                        How I made this: I cleaned Robert Shiller's data in Python in Colab, calculated the P/E ratio and built the chart with the class Altair template.
                     </p>
                 </div>
 
@@ -196,10 +196,10 @@
                 <div class="chart-description">
                     <h4><span class="num">03.2.1</span>Government health spending per person</h4>
                     <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                        India's government health spending per person rose from about $3.8 in 2000 to $33.0 in 2023, but it is still a fraction of China's ($436) and Brazil's ($446). The chart uses a log scale, so each gridline is ten times the one below.
+                        India's government health spending per person rose from about $3.8 in 2000 to $33.0 in 2023, still a fraction of China's ($436) and Brazil's ($446). The scale is logarithmic: each gridline is ten times the one below.
                     </p>
                     <p class="method">
-                        How I made this: I downloaded World Bank data on government health spending and life expectancy and cleaned it in Python in Google Colab. I picked six countries, reshaped the tables from wide to long and fixed the dates. I saved the clean data as a CSV in my GitHub repository, then built the chart with Altair and saved it as a Vega-Lite JSON file.
+                        How I made this: I cleaned World Bank data for six countries in Python in Colab and built the chart with Altair.
                     </p>
                 </div>
 
@@ -209,10 +209,10 @@
                 <div class="chart-description">
                     <h4><span class="num">03.2.2</span>Life expectancy at birth</h4>
                     <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                        Bangladesh's life expectancy rose by about 13 years between 2000 and 2023, from 62.0 to 74.7. It passed India in 2003 and has stayed ahead since, even though Bangladesh spends far less government money per person ($7.7 against India's $33.0 in 2023). India gained about 9 years, from 62.7 to 72.0.
+                        Bangladesh gained about 13 years of life expectancy since 2000 (62.0 to 74.7) and passed India in 2003, though it spends far less government money per person ($7.7 against India's $33.0 in 2023). India gained about 9 years, from 62.7 to 72.0.
                     </p>
                     <p class="method">
-                        How I made this: the life expectancy data came from the same World Bank download as the spending data. I cleaned it in the same Google Colab notebook and saved it as a CSV in my GitHub repository. Then I built the chart with Altair, using the same colours as the spending chart, and saved it as a Vega-Lite JSON file.
+                        How I made this: the same World Bank download and Colab notebook as the spending chart, built with Altair in the same colours.
                     </p>
                 </div>
 
@@ -222,10 +222,10 @@
                 <div class="chart-description">
                     <h4><span class="num">03.2.3</span>Spending against life expectancy, 2023</h4>
                     <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                        In 2023, Bangladesh had a higher life expectancy than India (74.7 against 72.0 years) on less than a quarter of India's government health spending per person ($7.7 against $33.0). China and Brazil spend about 13 times India's amount and live four to six years longer, while Pakistan, spending about a third as much as India, has the lowest life expectancy at 67.6.
+                        In 2023, Bangladesh had a higher life expectancy than India (74.7 against 72.0 years) on less than a quarter of its government health spending per person ($7.7 against $33.0). China and Brazil spend about 13 times India's amount and live four to six years longer.
                     </p>
                     <p class="method">
-                        How I made this: I used the merged spending and life expectancy table from my Colab notebook, saved as a CSV in my GitHub repository. In Altair I kept the 2023 rows, plotted one dot per country on a log scale, made India's dot larger, and saved the chart as a Vega-Lite JSON file.
+                        How I made this: I plotted the 2023 rows of the merged table from my Colab notebook, one dot per country on a log scale, with India's dot larger.
                     </p>
                 </div>
 
@@ -249,10 +249,10 @@
 
                 <div class="chart-description">
                     <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                        I replicated Our World in Data's chart <a href="https://ourworldindata.org/grapher/life-expectancy-vs-health-expenditure" target="_blank" rel="noopener">Life expectancy vs. health spending</a>. It plots life expectancy at birth against total health spending per person for countries with OECD spending data. This chart uses total spending in international dollars, while the charts in section 03 use government spending in US dollars, so the numbers are not the same.
+                        I replicated Our World in Data's chart <a href="https://ourworldindata.org/grapher/life-expectancy-vs-health-expenditure" target="_blank" rel="noopener">Life expectancy vs. health spending</a>, which plots life expectancy against total health spending per person in international dollars. Section 03 uses government spending in US dollars, so the numbers differ.
                     </p>
                     <p class="method">
-                        Source: UN World Population Prospects (life expectancy) and the OECD Health Expenditure and Financing Database (spending), via Our World in Data.
+                        Source: UN World Population Prospects and the OECD Health Expenditure and Financing Database, via Our World in Data.
                     </p>
                 </div>
             </details>
@@ -262,10 +262,10 @@
 
                 <div class="chart-description">
                     <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                        In 2023, life expectancy rises steeply with health spending up to a few thousand dollars per person and then flattens out. The United States, at $12,099 per person, sits far to the right of every other country with a life expectancy of about 79. The vertical axis starts at 64, not zero, so the differences between countries are easier to see.
+                        In 2023, life expectancy rises steeply with spending up to a few thousand dollars per person, then flattens. The US, at $12,099, is far to the right with a life expectancy of about 79. The vertical axis starts at 64, not zero.
                     </p>
                     <p class="method">
-                        How I made this: I downloaded the data behind the original chart from Our World in Data and cleaned it in Python in Google Colab. I renamed the columns, kept the rows with both numbers and fixed the dates. I saved it as a CSV in my GitHub repository and rebuilt the chart with Altair. The region colours are close to the original's but not exact.
+                        How I made this: I cleaned the data behind the original chart in Python in Colab and rebuilt the chart with Altair. The region colours are close to the original's, not exact.
                     </p>
                 </div>
 
@@ -278,10 +278,10 @@
 
                 <div class="chart-description">
                     <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                        India spends $312 per person on health, about a tenth of the typical country in this data (a median of $3,145), and only three of the 57 countries have a lower life expectancy: South Africa, Indonesia and Moldova. India is the lowest spender here, but the data covers mostly rich countries, so it is not necessarily the lowest anywhere.
+                        India spends $312 per person on health, about a tenth of the typical country in this data (median $3,145), and only three of the 57 countries have a lower life expectancy. India is the lowest spender here, but the data covers mostly rich countries, so it may not be the lowest anywhere.
                     </p>
                     <p class="method">
-                        How I made this: I used the same data as the replica, with India in blue and every other country in grey. A dashed line marks the median country, and spending is on a log scale, so each gridline is ten times the one before.
+                        How I made this: the same data as the replica, with India in blue, a dashed line at the median and a log scale.
                     </p>
                 </div>
 
@@ -300,16 +300,16 @@
 
                 <div class="chart-description">
                     <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                        This chart is drawn from live World Bank data each time the page loads. India's life expectancy fell by almost three years in 2021, from 70.2 to 67.3, before recovering to 72.0 in 2023. Every other country dipped too, except China, whose life expectancy barely moved.
+                        Drawn from live World Bank data each time the page loads, this chart shows India's life expectancy fell by almost three years in 2021, from 70.2 to 67.3, before recovering to 72.0 in 2023. Every other country dipped too, except China.
                     </p>
                     <p class="method">
-                        The data comes from the World Bank Data360 API. The base URL is https://data360api.worldbank.org/data360/data, and the request asks for the database <code>WB_WDI</code> (World Development Indicators), the indicator <code>WB_WDI_SP_DYN_LE00_IN</code> (life expectancy at birth), six countries (<code>IND, CHN, BRA, IDN, PAK, BGD</code>) and the years 2000 to 2023.
-                    </p>
-                    <p class="method" style="overflow-wrap: anywhere;">
-                        Full URL: <a href="https://data360api.worldbank.org/data360/data?DATABASE_ID=WB_WDI&amp;INDICATOR=WB_WDI_SP_DYN_LE00_IN&amp;REF_AREA=IND,CHN,BRA,IDN,PAK,BGD&amp;timePeriodFrom=2000&amp;timePeriodTo=2023" target="_blank" rel="noopener">https://data360api.worldbank.org/data360/data?DATABASE_ID=WB_WDI&amp;INDICATOR=WB_WDI_SP_DYN_LE00_IN&amp;REF_AREA=IND,CHN,BRA,IDN,PAK,BGD&amp;timePeriodFrom=2000&amp;timePeriodTo=2023</a>
+                        API: base URL <code>https://data360api.worldbank.org/data360/data</code>, database <code>WB_WDI</code>, indicator <code>WB_WDI_SP_DYN_LE00_IN</code> (life expectancy), countries <code>IND, CHN, BRA, IDN, PAK, BGD</code>, years 2000 to 2023.
                     </p>
                     <p class="method">
-                        How I made this: I opened the address in my browser to check the data first. It comes back as JSON in a tidy format, with one row per country per year (144 rows), but the values are stored as text, the countries as codes and the years as plain numbers. In the chart spec I turned the values into numbers, the codes into country names and the years into dates. The chart reads the API directly, so it updates if the World Bank revises its figures.
+                        Full URL: <a href="https://data360api.worldbank.org/data360/data?DATABASE_ID=WB_WDI&amp;INDICATOR=WB_WDI_SP_DYN_LE00_IN&amp;REF_AREA=IND,CHN,BRA,IDN,PAK,BGD&amp;timePeriodFrom=2000&amp;timePeriodTo=2023" target="_blank" rel="noopener">data360api.worldbank.org/data360/data?DATABASE_ID=WB_WDI&amp;INDICATOR=WB_WDI_SP_DYN_LE00_IN&amp;REF_AREA=IND,CHN,BRA,IDN,PAK,BGD&amp;timePeriodFrom=2000&amp;timePeriodTo=2023</a>
+                    </p>
+                    <p class="method">
+                        How I made this: I checked the address in my browser first. The values arrive as text, the countries as codes and the years as numbers, so the chart converts them.
                     </p>
                 </div>
 
@@ -325,13 +325,13 @@
                         Bangladesh and Pakistan spend less on health per person than India: $179 each against India's $273 in 2022. India is still not the lowest spender anywhere, because 46 of the 192 countries on the list spend less.
                     </p>
                     <p class="method">
-                        How I made this: Wikipedia's list of countries by total health expenditure per capita has no data download, so I scraped the page in Google Colab. I downloaded it with Python's requests package and pulled out the second table (WHO data for 192 countries) with pandas. I renamed the columns, kept only the numbers, because the table can include commas and footnote marks, and saved the result as a CSV in my GitHub repository. The chart reads that file and shows all 192 countries, with India and my five other countries highlighted.
+                        How I made this: I scraped Wikipedia's list of countries by total health expenditure per capita in Colab with Python's requests and pandas, took the second table (WHO data for 192 countries), kept only the numbers and saved a CSV.
                     </p>
                     <p class="method">
-                        Challenges: the page has three tables, so I had to find the right one by checking the column names. Wikipedia can refuse requests from programs that give no name, so I added one to mine. The table mixes years (169 countries are 2022, 21 are 2023 and two are 2021), so the comparison is not exactly like for like, although all six of my countries are 2022. Country names also follow Wikipedia's spelling, such as "Ivory Coast" and "DR Congo", which could cause trouble if I joined this table to another dataset.
+                        Challenges: the page has three tables, so I picked the right one by its columns, and Wikipedia can refuse unnamed programs, so I added a name. The table mixes years (169 countries are 2022), though all six of mine are 2022.
                     </p>
                     <p class="method">
-                        Note: these WHO figures for 2022 are not the same as the OECD figures in 04.3, which come from a different source and year, so India is $273 here and $312 there.
+                        Note: these WHO figures differ from the OECD ones in 04.3 (India is $273 here and $312 there).
                     </p>
                 </div>
 
@@ -350,19 +350,16 @@
 
                 <div class="chart-description">
                     <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                        Since 2000, India's infant mortality has fallen by almost two-thirds, from 66.3 to 24.5 deaths per 1,000 births, and maternal deaths by more than three-quarters, from 362 to 80 per 100,000 births, while life expectancy rose 9.3 years to 72.0. Government health spending per person grew almost ninefold, from $3.8 to $33.0, and the out-of-pocket share of health spending fell from 71.7% to 43.9%. The pandemic shows in 2021: life expectancy dropped to 67.3 and maternal deaths jumped to 155, before both recovered. The six indicators use different units, so each chart has its own vertical scale, and five of the six do not start at zero.
+                        Since 2000, India's infant mortality has fallen by almost two-thirds (66.3 to 24.5 per 1,000 births) and maternal deaths by more than three-quarters (362 to 80 per 100,000). Life expectancy rose 9.3 years to 72.0, and government health spending per person grew almost ninefold, from $3.8 to $33.0. The pandemic shows in 2021. Each chart has its own scale, and five of the six do not start at zero.
                     </p>
                     <p class="method">
-                        How I made this: I used two loops. In Python (Google Colab), a loop goes through six indicator codes, builds the World Bank API address for each one, downloads the data, cleans it (dropping missing values, turning the years into whole numbers and sorting them) and saves each series as its own JSON file in my GitHub repository. On this page, a JavaScript loop goes through the same six files, makes a box for each and draws a small chart in it, in a grid.
+                        How I made this: a Python loop in Colab downloads six World Bank indicators and saves each as a JSON file; a JavaScript loop on this page draws one chart per file.
                     </p>
                     <p class="method">
-                        Challenges: the World Bank's older API address timed out (a 524 error), so I switched to its Data360 address, which answered straight away, and I added a time limit so a loop can never hang. The numbers arrive as text and had to be converted, and the six series have different units, so they could not share one scale.
+                        Challenges: the World Bank's older API address timed out (error 524), so I switched to its Data360 address. The values arrive as text and the units differ, so each chart has its own scale.
                     </p>
                     <p class="method">
-                        Source: World Bank, World Development Indicators, through the Data360 API.
-                    </p>
-                    <p class="method">
-                        View the <a href="https://colab.research.google.com/drive/18mUe9Pwcgc3kFy9n_eXhizTrDrOrrRGE?usp=sharing" target="_blank" rel="noopener">Google Colab notebook</a>.
+                        Source: World Bank, World Development Indicators, via the Data360 API. <a href="https://colab.research.google.com/drive/18mUe9Pwcgc3kFy9n_eXhizTrDrOrrRGE?usp=sharing" target="_blank" rel="noopener">View the Google Colab notebook</a>.
                     </p>
                 </div>
 
