@@ -45,15 +45,22 @@
             display: flex;
         }
 
-        /* the dashboard: a grid that fits as many small charts across as there is room for */
+        /* the dashboard: a grid of cards that fits as many charts across as there is room for */
         .dashboard-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-            gap: 18px 6px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 18px;
             margin-top: 16px;
         }
         .dashboard-grid > div {
-            justify-self: center;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 12px 4px 6px;
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
         }
         
     </style>
@@ -343,7 +350,7 @@
 
                 <div class="chart-description">
                     <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                        Six health and development indicators for India since 2000, one small chart for each. They use different units, so each chart has its own vertical scale, and its first and last values are labelled.
+                        Since 2000, India's infant mortality has fallen by almost two-thirds, from 66.3 to 24.5 deaths per 1,000 births, and maternal deaths by more than three-quarters, from 362 to 80 per 100,000 births, while life expectancy rose 9.3 years to 72.0. Government health spending per person grew almost ninefold, from $3.8 to $33.0, and the out-of-pocket share of health spending fell from 71.7% to 43.9%. The pandemic shows in 2021: life expectancy dropped to 67.3 and maternal deaths jumped to 155, before both recovered. The six indicators use different units, so each chart has its own vertical scale, and five of the six do not start at zero.
                     </p>
                     <p class="method">
                         How I made this: I used two loops. In Python (Google Colab), a loop goes through six indicator codes, builds the World Bank API address for each one, downloads the data, cleans it (dropping missing values, turning the years into whole numbers and sorting them) and saves each series as its own JSON file in my GitHub repository. On this page, a JavaScript loop goes through the same six files, makes a box for each and draws a small chart in it, in a grid.
@@ -415,23 +422,23 @@
         let figure_13_spec = "wiki_health_spending_chart.json";
         vegaEmbed('#Location13', figure_13_spec)
 
-        // ---- CC6 Loops: one small chart for each of six indicators, drawn by a loop ----
+        // ---- CC6 Loops: one chart for each of six indicators, drawn by a loop ----
         // Each chart reads its own JSON file (made by the Python loop in Colab).
         // The indicators use different units, so every chart has its own vertical scale.
         let india_base = "https://raw.githubusercontent.com/krshmashah13/krshmashah13.github.io/refs/heads/main/";
         let india_indicators = [
-            {"file": "india_life_expectancy.json",  "title": "Life expectancy",        "unit": "years at birth",              "rising": true},
-            {"file": "india_infant_mortality.json", "title": "Infant mortality",       "unit": "deaths per 1,000 births",      "rising": false},
-            {"file": "india_fertility.json",        "title": "Fertility rate",         "unit": "births per woman",             "rising": false},
-            {"file": "india_gov_health_spend.json", "title": "Public health spending", "unit": "government, US$ per person", "rising": true},
-            {"file": "india_out_of_pocket.json",    "title": "Out-of-pocket spending", "unit": "% of health spending",         "rising": false},
-            {"file": "india_maternal_deaths.json",  "title": "Maternal deaths",        "unit": "per 100,000 births",           "rising": false}
+            {"file": "india_life_expectancy.json",  "title": "Life expectancy",            "axis": "Years at birth",           "rising": true},
+            {"file": "india_infant_mortality.json", "title": "Infant mortality",           "axis": "Deaths per 1,000 births",  "rising": false},
+            {"file": "india_fertility.json",        "title": "Fertility rate",             "axis": "Births per woman",         "rising": false},
+            {"file": "india_gov_health_spend.json", "title": "Government health spending", "axis": "US$ per person",           "rising": true},
+            {"file": "india_out_of_pocket.json",    "title": "Out-of-pocket spending",     "axis": "% of health spending",     "rising": true},
+            {"file": "india_maternal_deaths.json",  "title": "Maternal deaths",            "axis": "Per 100,000 births",       "rising": false}
         ];
 
         for (let i = 0; i < india_indicators.length; i++) {
             let indicator = india_indicators[i];
 
-            // make an empty box for this indicator inside the dashboard
+            // make an empty box (a card) for this indicator inside the dashboard
             let panel = document.createElement("div");
             panel.id = "india_panel_" + i;
             document.getElementById("IndiaDashboard").appendChild(panel);
@@ -439,21 +446,21 @@
             // the chart for this indicator: the line, with the first and last values labelled
             let india_spec = {
                 "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-                "title": {"text": indicator.title, "subtitle": indicator.unit, "anchor": "start", "fontSize": 13, "subtitleFontSize": 11, "subtitleColor": "#555555"},
-                "width": 165,
-                "height": 120,
+                "title": {"text": indicator.title, "subtitle": "Source: World Bank", "anchor": "middle", "fontSize": 14, "subtitleFontSize": 11, "subtitleFontStyle": "italic", "subtitleColor": "#555555"},
+                "width": 230,
+                "height": 190,
                 "data": {"url": india_base + indicator.file},
                 "layer": [
                     {
                         "mark": {"type": "line", "color": "#1d4ed8", "strokeWidth": 2.5},
                         "encoding": {
-                            "x": {"field": "date", "type": "quantitative", "scale": {"domain": [2000, 2029]}, "axis": {"title": null, "format": "d", "values": [2000, 2010, 2020]}},
-                            "y": {"field": "value", "type": "quantitative", "scale": {"zero": false, "padding": 14}, "axis": {"title": null, "tickCount": 4}}
+                            "x": {"field": "date", "type": "quantitative", "scale": {"domain": [2000, 2028]}, "axis": {"title": null, "format": "d", "values": [2000, 2005, 2010, 2015, 2020]}},
+                            "y": {"field": "value", "type": "quantitative", "scale": {"zero": false, "padding": 14}, "axis": {"title": indicator.axis, "titlePadding": 10, "tickCount": 5}}
                         }
                     },
                     {
                         "transform": [{"filter": "datum.date == 2000"}],
-                        "mark": {"type": "text", "align": "left", "dx": 4, "dy": (indicator.rising ? 11 : -8), "fontSize": 11, "color": "#1d4ed8"},
+                        "mark": {"type": "text", "align": "left", "dx": 5, "dy": (indicator.rising ? 12 : -9), "fontSize": 11, "color": "#1d4ed8"},
                         "encoding": {
                             "x": {"field": "date", "type": "quantitative"},
                             "y": {"field": "value", "type": "quantitative"},
@@ -462,7 +469,7 @@
                     },
                     {
                         "transform": [{"filter": "datum.date == 2023"}],
-                        "mark": {"type": "text", "align": "left", "dx": 5, "dy": 0, "fontSize": 12, "fontWeight": "bold", "color": "#1d4ed8"},
+                        "mark": {"type": "text", "align": "left", "dx": 6, "dy": 0, "fontSize": 12, "fontWeight": "bold", "color": "#1d4ed8"},
                         "encoding": {
                             "x": {"field": "date", "type": "quantitative"},
                             "y": {"field": "value", "type": "quantitative"},
