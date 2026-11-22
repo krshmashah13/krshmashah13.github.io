@@ -363,7 +363,7 @@
                         Challenges: the World Bank's older API address timed out (error 524), so I switched to its Data360 address. The values arrive as text and the units differ, so each chart has its own scale.
                     </p>
                     <p class="method">
-                        Source: World Bank, World Development Indicators, via the Data360 API. <a href="https://colab.research.google.com/drive/18mUe9Pwcgc3kFy9n_eXhizTrDrOrrRGE?usp=sharing" target="_blank" rel="noopener">View the Google Colab notebook</a>.
+                        Source: World Bank, World Development Indicators, via the Data360 API. The data run from 2000 to 2023. <a href="https://colab.research.google.com/drive/18mUe9Pwcgc3kFy9n_eXhizTrDrOrrRGE?usp=sharing" target="_blank" rel="noopener">View the Google Colab notebook</a>.
                     </p>
                 </div>
 
@@ -458,7 +458,7 @@
                     {
                         "mark": {"type": "line", "color": "#1d4ed8", "strokeWidth": 2.5},
                         "encoding": {
-                            "x": {"field": "date", "type": "quantitative", "scale": {"domain": [1999, 2028]}, "axis": {"title": null, "format": "d", "values": [2000, 2005, 2010, 2015, 2020], "labelFlush": false}},
+                            "x": {"field": "date", "type": "quantitative", "scale": {"domain": [1999, 2028]}, "axis": {"title": null, "format": "d", "values": [2000, 2005, 2010, 2015, 2020, 2025], "labelFlush": false}},
                             "y": {"field": "value", "type": "quantitative", "scale": {"zero": false, "padding": 14}, "axis": {"title": indicator.axis, "titlePadding": 10, "tickCount": 5}}
                         }
                     },
