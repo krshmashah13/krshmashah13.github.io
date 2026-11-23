@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Wages by council in Wales, 2024",
+    "subtitle": "Councils shaded by wages; Blaenau Gwent has no value (grey)",
+    "anchor": "middle",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#555555"
+  },
+  "width": 480,
+  "height": 560,
+  "config": {
+    "mark": {"invalid": null},
+    "view": {"stroke": null},
+    "font": "DM Sans"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/jhellingsdata/map-data/refs/heads/main/gbr/LAD_WLS_2026_05.json",
+    "format": {"type": "topojson", "feature": "geog"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.id",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/krshmashah13/krshmashah13.github.io/refs/heads/main/wales_wages_2024.csv",
+          "format": {"type": "csv", "parse": {"value": "number"}}
+        },
+        "key": "geo_id",
+        "fields": ["value"]
+      }
+    },
+    {
+      "calculate": "isValid(datum.value) ? '£' + format(datum.value, ',.0f') : 'No data'",
+      "as": "wage_label"
+    }
+  ],
+  "projection": {"type": "mercator"},
+  "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 0.8},
+  "encoding": {
+    "color": {
+      "condition": {"test": "!isValid(datum.value)", "value": "#d9d9d9"},
+      "field": "value",
+      "type": "quantitative",
+      "scale": {"scheme": "blues"},
+      "legend": {
+        "title": "Wages (£)",
+        "orient": "right",
+        "format": ",.0f"
+      }
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "Council"},
+      {"field": "wage_label", "type": "nominal", "title": "Wages"}
+    ]
+  }
+}

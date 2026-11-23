@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Wales",
+    "subtitle": "Source: HM Land Registry, UK House Price Index",
+    "subtitleColor": "#5B6573",
+    "subtitleFontSize": 11,
+    "subtitleFontStyle": "italic",
+    "anchor": "middle"
+  },
+  "width": "container",
+  "height": 250,
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/baileymjshu/baileymjshu.github.io/refs/heads/main/data_UK_HPI-wales.json",
+        "format": {
+          "type": "json",
+          "property": "result.items",
+          "parse": {"refMonth": "date:'%Y-%m'"}
+        }
+      },
+      "mark": {"type": "line", "color": "#00B140", "strokeWidth": 2},
+      "encoding": {
+        "x": {
+          "field": "refMonth",
+          "type": "temporal",
+          "title": null,
+          "axis": {
+            "format": "%Y",
+            "tickCount": {"interval": "year", "step": 2},
+            "labelFlush": false
+          }
+        },
+        "y": {
+          "field": "averagePrice",
+          "type": "quantitative",
+          "title": "Average price",
+          "scale": {"domain": [100000, 600000]},
+          "axis": {
+            "labelExpr": "'£' + format(datum.value / 1000, ',.0f') + 'k'"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "refMonth",
+            "type": "temporal",
+            "title": "Month",
+            "format": "%B %Y"
+          },
+          {
+            "field": "averagePrice",
+            "type": "quantitative",
+            "title": "Average price",
+            "format": "$,.0f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "locale": {
+      "number": {
+        "decimal": ".",
+        "thousands": ",",
+        "grouping": [3],
+        "currency": ["£", ""]
+      }
+    }
+  }
+}
