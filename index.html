@@ -377,7 +377,24 @@
         <details open>
             <summary><h2><span class="num">07.</span>Maps</h2></summary>
 
-            <!-- The maps will go here, as 07.1 and 07.2 tabs, once I have chosen the data -->
+            <details class="sub" open>
+                <summary><h3><span class="num">07.1</span>Wales wages choropleth</h3></summary>
+
+                <div class="chart-description">
+                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                        Annual wages in 2024 were highest in the Vale of Glamorgan (£38,420) and Monmouthshire (£37,828) and lowest in Denbighshire (£30,112) and Gwynedd (£30,431), a gap of about £8,300 between the top and bottom councils. Blaenau Gwent has no value.
+                    </p>
+                    <p class="method">
+                        How I made this: I used the course's map file of Wales's 22 councils and the 2024 wages CSV, and saved copies of both in my GitHub repository. In the chart spec, a lookup matches each council's code on the map to its code in the CSV and copies across its wage, and the councils are shaded in blues. The CSV has no value for Blaenau Gwent, so a condition draws it in grey, and a setting keeps its shape on the map instead of dropping it.
+                    </p>
+                    <p class="method">
+                        Source: annual wages (£), ONS, from the course data file wages_LAD_WLS.csv.
+                    </p>
+                </div>
+
+                <!-- This element will contain our vega-lite chart -->
+                <figure id="Location14"></figure>
+            </details>
         </details>
     </section>
 
@@ -433,6 +450,9 @@
 
         let figure_13_spec = "wiki_health_spending_chart.json";
         vegaEmbed('#Location13', figure_13_spec)
+
+        let figure_14_spec = "wales_wages_chart.json";
+        vegaEmbed('#Location14', figure_14_spec)
 
         // ---- CC6 Loops: one chart for each of six indicators, drawn by a loop ----
         // Each chart reads its own JSON file (made by the Python loop in Colab).
